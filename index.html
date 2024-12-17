@@ -3,146 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Sricharan Mahavadi, a data analyst specializing in healthcare analytics, data visualization, and machine learning pipelines.">
-    <meta name="author" content="Sricharan Mahavadi">
-    <meta name="keywords" content="Data Analyst, Healthcare Analytics, Generative AI, Portfolio, Sricharan Mahavadi">
-    <title>Sricharan Mahavadi | Data Analyst Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary-color: #111111;
+            --accent-color: #dddddd;
+            --text-color: #ffffff;
+            --transition: all 0.3s ease;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-color);
+            color: var(--text-color);
+        }
+
+        .nav-container {
+            position: fixed;
+            width: 100%;
+            background: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
         }
-        nav ul {
+
+        nav {
             display: flex;
-            justify-content: center;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+            justify-content: space-between;
+            padding: 2rem 5rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
-        nav ul li {
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
+
+        .logo {
+            font-size: 2rem;
             font-weight: bold;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
         }
-        nav ul li a:hover {
-            text-decoration: underline;
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
         }
-        main {
-            padding: 2rem;
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: var(--transition);
         }
-        #hero {
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: #fff;
-            padding: 3rem 1rem;
+            padding: 0 2rem;
         }
-        #hero h1 {
-            font-size: 2.5rem;
-        }
-        section {
-            margin-bottom: 2rem;
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        .project {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background-color: #f9f9f9;
-        }
-        #contact ul {
-            list-style: none;
-            padding: 0;
-        }
-        #contact ul li {
-            margin-bottom: 0.5rem;
-        }
-        footer {
-            text-align: center;
-            background-color: #333;
-            color: #fff;
-            padding: 1rem 0;
-        }
-        footer p {
+
+        .hero-content h1 {
+            font-size: 5rem;
             margin: 0;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="nav-container">
         <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <a href="#" class="logo">YP</a>
+            <div class="nav-links">
+                <a href="#about"><i class="fas fa-user"></i> About</a>
+                <a href="#work"><i class="fas fa-code"></i> Work</a>
+                <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
         </nav>
-    </header>
-    <main>
-        <section id="hero">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Data Analyst | Healthcare Analytics | Generative AI Enthusiast</p>
-        </section>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I am Sricharan Mahavadi, a data analyst with a passion for uncovering insights in healthcare analytics. I bring expertise in data visualization, automation, and optimizing workflows.</p>
-        </section>
-        <section id="resume">
-            <h2>Resume</h2>
-            <p>You can download my <a href="resume.pdf" target="_blank">resume here</a>.</p>
-            <ul>
-                <li><strong>Experience:</strong> IQVIA, Novartis</li>
-                <li><strong>Skills:</strong> Python, SQL, PowerBI, Tableau, Excel VBA</li>
-                <li><strong>Certifications:</strong> Introduction to Deep Learning with Keras</li>
-            </ul>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Data Engineering Pipeline</h3>
-                <p>Built an end-to-end pipeline for processing Boston 311 data using Apache Superset and MotherDuck.</p>
-            </div>
-            <div class="project">
-                <h3>Time Series Forecasting</h3>
-                <p>Developed ARIMA models for sales prediction with confidence intervals in visualizations.</p>
-            </div>
-            <div class="project">
-                <h3>Healthcare Analytics</h3>
-                <p>Analyzed pharmacy campaign performance using SQL and PowerBI.</p>
-            </div>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me or connect on LinkedIn.</p>
-            <ul>
-                <li>Email: <a href="mailto:sricharan.mahavadi@example.com">sricharan.mahavadi@example.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/sricharanmahavadi" target="_blank">linkedin.com/in/sricharanmahavadi</a></li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Sricharan Mahavadi. All Rights Reserved.</p>
-    </footer>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Creative Developer</h1>
+            <p>Building digital experiences that matter</p>
+        </div>
+    </section>
 </body>
 </html>
