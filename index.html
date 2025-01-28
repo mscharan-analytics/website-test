@@ -1,205 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sricharan Mahavadi - GitHub Profile</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
+/* Change this file to get your personal Portfolio */
 
-        header {
-            background-color: #2d2d2d;
-            color: #fff;
-            padding: 2rem 0;
-            text-align: center;
-        }
+// To change portfolio colors globally go to the _globalColor.scss file
 
-        h1 {
-            margin: 0;
-        }
+import emoji from "react-easy-emoji";
+import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
 
-        h3 {
-            margin: 0.5rem 0;
-        }
+// Splash Screen
+const splashScreen = {
+  enabled: true,
+  animation: splashAnimation,
+  duration: 2000, // Set animation duration
+};
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+// Summary and Greeting Section
+const illustration = {
+  animated: true,
+};
 
-        .container {
-            padding: 2rem;
-        }
+const greeting = {
+  username: "Sricharan Mahavadi",
+  title: "Hi, I'm Sricharan 👋",
+  subTitle: emoji(
+    "Data-driven professional with 3 years of experience in business analytics, data engineering, and healthcare analytics. Passionate about leveraging advanced techniques such as NLP, machine learning, and data pipeline optimization to extract actionable insights and drive impactful decisions."
+  ),
+  resumeLink: "https://your-resume-link.com", // Replace with your hosted resume link
+  displayGreeting: true,
+};
 
-        .social-icons img {
-            margin: 0 10px;
-        }
+// Social Media Links
+const socialMediaLinks = {
+  github: "https://github.com/mscharan-analytics",
+  linkedin: "https://www.linkedin.com/in/smahavadi",
+  gmail: "mscharan@bu.edu",
+  display: true,
+};
 
-        .skills, .projects, .languages, .stats {
-            margin-bottom: 2rem;
-        }
+// Skills Section
+const skillsSection = {
+  title: "What I do",
+  subTitle: "DATA ENGINEER AND ANALYST SPECIALIZING IN ADVANCED ANALYTICS AND PIPELINES",
+  skills: [
+    emoji("⚡ Build scalable ETL workflows using Snowflake, Alteryx, and AWS S3"),
+    emoji("⚡ Develop interactive dashboards with Power BI and Tableau"),
+    emoji("⚡ Perform advanced statistical analysis and predictive modeling"),
+    emoji("⚡ Implement NLP techniques for sentiment analysis and automation"),
+  ],
 
-        .skills img, .languages img {
-            margin: 5px;
-        }
+  softwareSkills: [
+    { skillName: "Python", fontAwesomeClassname: "fab fa-python" },
+    { skillName: "SQL", fontAwesomeClassname: "fas fa-database" },
+    { skillName: "Tableau", fontAwesomeClassname: "fas fa-chart-bar" },
+    { skillName: "Power BI", fontAwesomeClassname: "fas fa-chart-pie" },
+    { skillName: "Snowflake", fontAwesomeClassname: "fas fa-snowflake" },
+    { skillName: "AWS", fontAwesomeClassname: "fab fa-aws" },
+    { skillName: "Google Cloud", fontAwesomeClassname: "fab fa-google" },
+    { skillName: "NLP", fontAwesomeClassname: "fas fa-brain" },
+  ],
+  display: true,
+};
 
-        .projects ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
+// Education Section
+const educationInfo = {
+  display: true,
+  schools: [
+    {
+      schoolName: "Boston University, Questrom School of Business",
+      subHeader: "M.S. in Business Analytics (STEM)",
+      duration: "Jan 2024 - Jan 2025",
+      desc: "Beta Gamma Sigma Honors Society inductee and MSBA Class Representative.",
+    },
+    {
+      schoolName: "Visvesvaraya National Institute of Technology (VNIT), Nagpur",
+      subHeader: "Bachelor of Technology in Engineering (STEM)",
+      duration: "May 2016 - May 2020",
+      desc: "E-Cell Core Coordinator and Department Representative.",
+    },
+  ],
+};
 
-        .projects li {
-            margin-bottom: 10px;
-        }
+// Tech Stack Proficiency
+const techStack = {
+  viewSkillBars: true,
+  experience: [
+    { Stack: "Data Engineering", progressPercentage: "90%" },
+    { Stack: "Data Analysis", progressPercentage: "85%" },
+    { Stack: "Machine Learning & NLP", progressPercentage: "80%" },
+  ],
+};
 
-        .collapsible {
-            background-color: #777;
-            color: white;
-            cursor: pointer;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-        }
+// Work Experience Section
+const workExperiences = {
+  display: true,
+  experience: [
+    {
+      role: "Business Analyst",
+      company: "Novartis",
+      companylogo: require("./assets/images/novartisLogo.png"),
+      date: "July 2022 – August 2023",
+      desc: [
+        "Streamlined oncology sales data workflows, saving 55 hours/week.",
+        "Enhanced ETL workflows with Snowflake, Alteryx, and AWS S3 for $150M/month sales analysis.",
+        "Built advanced data visualizations in Tableau and Power BI.",
+      ],
+    },
+    {
+      role: "Data Analyst",
+      company: "IQVIA",
+      companylogo: require("./assets/images/iqviaLogo.png"),
+      date: "Sept 2020 – June 2022",
+      desc: [
+        "Analyzed Rx data for 100+ products and tracked patient journeys.",
+        "Designed 40+ dashboards using Power BI and Excel VBA, saving 20 hours/month.",
+        "Developed GDPR-compliant ETL pipelines and automated workflows.",
+      ],
+    },
+    {
+      role: "Sales and Design Associate",
+      company: "PERI Formwork",
+      companylogo: require("./assets/images/periLogo.png"),
+      date: "May 2019 – July 2019",
+      desc: [
+        "Analyzed sales data and identified 75+ potential clients.",
+        "Conducted extensive market research across 130+ companies.",
+      ],
+    },
+  ],
+};
 
-        .collapsible:after {
-            content: '\002B'; /* "+" symbol */
-            float: right;
-            font-size: 13px;
-        }
+// Projects Section
+const bigProjects = {
+  title: "Projects",
+  subtitle: "DATA-DRIVEN INITIATIVES AND INSIGHTS",
+  projects: [
+    {
+      image: require("./assets/images/311project.png"),
+      projectName: "Boston 311 Data Pipeline",
+      projectDesc: "Designed a seamless pipeline using Prefect, BigQuery, and MotherDuck for Boston 311 datasets.",
+      footerLink: [{ name: "View Project", url: "https://github.com/mscharan-analytics/311-data-pipeline" }],
+    },
+    {
+      image: require("./assets/images/medicareProject.png"),
+      projectName: "Medicare Part D Spending Analysis",
+      projectDesc: "Forecasted $240B annual drug expenditures using ML and developed AI-powered tools.",
+      footerLink: [{ name: "View Project", url: "https://github.com/mscharan-analytics/medicare-analysis" }],
+    },
+    {
+      image: require("./assets/images/hospitalityProject.png"),
+      projectName: "Hospitality Intelligence",
+      projectDesc: "Created an NLP-powered hotel recommendation system using sentiment analysis.",
+      footerLink: [{ name: "View Project", url: "https://github.com/mscharan-analytics/hospitality-intelligence" }],
+    },
+  ],
+};
 
-        .active:after {
-            content: "\2212"; /* "−" symbol */
-        }
+// Achievements Section
+const achievementSection = {
+  title: emoji("Achievements & Certifications 🏆"),
+  subtitle: "Recognitions for Academic and Professional Excellence",
+  achievementsCards: [
+    {
+      title: "Beta Gamma Sigma Honors Society",
+      subtitle: "Recognized as one of the top MSBA students at Boston University.",
+      image: require("./assets/images/bgsLogo.png"),
+    },
+    {
+      title: "Novartis Star Award",
+      subtitle: "Awarded for exemplary contributions in data products and initiatives.",
+      image: require("./assets/images/starAward.png"),
+    },
+    {
+      title: "IQVIA Impact Silver Award",
+      subtitle: "Recognized for outstanding analytical intelligence.",
+      image: require("./assets/images/iqviaAward.png"),
+    },
+  ],
+  display: true,
+};
 
-        .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: #f1f1f1;
-        }
+// Contact Section
+const contactInfo = {
+  title: emoji("Contact Me ☎️"),
+  subtitle: "Let's collaborate or discuss a project. Reach out anytime!",
+  email_address: "mscharan@bu.edu",
+};
 
-        .scrollable-section {
-            max-height: 500px;
-            overflow-y: scroll;
-            padding: 1rem;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #2d2d2d;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Hi 👋, I'm Sricharan Mahavadi</h1>
-    <h3>A passionate Analytics professional pursuing Masters Degree @Boston University</h3>
-    <img src="https://github.com/mscharan-analytics/mscharan-analytics/assets/140626070/29241f01-4064-4403-bdc1-e6a6740e6f7f" alt="Coding" />
-</header>
-
-<div class="container">
-
-    <div class="social-icons">
-        <p><a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=mscharan-analytics" alt="mscharan-analytics" /></a></p>
-
-        <p>
-            <a href="https://linkedin.com/in/smahavadi" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="smahavadi" height="30" width="40" /></a>
-            <a href="https://kaggle.com/sricharanmahavadi" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/kaggle.svg" alt="sricharanmahavadi" height="30" width="40" /></a>
-            <a href="https://instagram.com/ingenious_charan" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="ingenious_charan" height="30" width="40" /></a>
-            <a href="https://medium.com/@mscharan2004" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@mscharan2004" height="30" width="40" /></a>
-            <a href="https://www.youtube.com/c/mr.ingenious1177" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="mr.ingenious1177" height="30" width="40" /></a>
-            <a href="https://www.hackerrank.com/mscharan1" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="mscharan1" height="30" width="40" /></a>
-        </p>
-    </div>
-
-    <div class="scrollable-section">
-        <h3>About Me</h3>
-        <p>🔭 I’m currently working on <strong>LLMs and GenAI</strong></p>
-        <p>🌱 I’m currently learning <strong>Retrieval-Augmented Generation systems</strong></p>
-        <p>📝 I regularly write articles on <a href="https://medium.com/@mscharan2004" target="_blank">Medium</a></p>
-        <p>💬 Ask me about <strong>Analytics, Healthcare, GenAI</strong></p>
-        <p>📫 How to reach me: <strong>mscharan@bu.edu</strong></p>
-        <p>📄 Know about my experiences <a href="https://sricharan-mahavadi-resume.tiiny.site" target="_blank">here</a></p>
-        <p>⚡ Fun fact: I am a huge Formula 1 and NBA fan!</p>
-    </div>
-
-    <div class="skills">
-        <h3>Languages and Tools:</h3>
-        <div>
-            <a href="https://www.cprogramming.com/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/></a>
-            <a href="https://www.w3schools.com/cpp/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/></a>
-            <a href="https://cloud.google.com" target="_blank"><img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/></a>
-            <a href="https://ifttt.com/" target="_blank"><img src="https://www.vectorlogo.zone/logos/ifttt/ifttt-ar21.svg" alt="ifttt" width="40" height="40"/></a>
-            <a href="https://www.adobe.com/in/products/illustrator.html" target="_blank"><img src="https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg" alt="illustrator" width="40" height="40"/></a>
-            <a href="https://kubernetes.io" target="_blank"><img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="40" height="40"/></a>
-            <a href="https://www.mathworks.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="matlab" width="40" height="40"/></a>
-            <a href="https://www.mongodb.com/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/></a>
-            <a href="https://www.mysql.com/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/></a>
-            <a href="https://pandas.pydata.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/></a>
-            <a href="https://www.photoshop.com/en" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/></a>
-            <a href="https://www.python.org" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/></a>
-            <a href="https://pytorch.org/" target="_blank"><img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/></a>
-            <a href="https://scikit-learn.org/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/></a>
-            <a href="https://seaborn.pydata.org/" target="_blank"><img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/></a>
-            <a href="https://www.tensorflow.org" target="_blank"><img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/></a>
-        </div>
-    </div>
-
-    <div class="projects">
-        <h3>My top Projects:</h3>
-        <ul>
-            <li><a href="https://github.com/mscharan-analytics/NLP-Project-Luxurious-Hotel-Review">NLP-Project-Luxurious-Hotel-Review</a> - Using NLP and market basket analysis to conduct sentiment analysis and provide a recommendation system.</li>
-            <li><a href="https://github.com/mscharan-analytics/Smoking-Prediction-And-Risk-Analysis">Smoking-Prediction-And-Risk-Analysis</a> - Using ML to predict if a person is smoking or not.</li>
-            <li><a href="https://github.com/mscharan-analytics/Covid-Impact-on-Stocks">Covid-Impact-on-Stocks</a> - Analyzing the impact of Covid-19 on stocks.</li>
-            <li><a href="https://github.com/mscharan-analytics/Netflix-Data-Dynamics">Netflix-Data-Dynamics</a> - Using SQL, creating a detailed analysis and dashboard using Tableau.</li>
-        </ul>
-    </div>
-
-    <div class="scrollable-section">
-        <h3>GitHub Stats:</h3>
-        <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=mscharan-analytics&show_icons=true&locale=en&layout=compact" alt="mscharan-analytics" />
-        <img align="center" src="https://github-readme-stats.vercel.app/api?username=mscharan-analytics&show_icons=true&locale=en" alt="mscharan-analytics" />
-    </div>
-
-    <button class="collapsible">More About Me</button>
-    <div class="content">
-        <p>I am highly passionate about data science and the impact of generative AI in various industries. Currently, I am focused on learning how to build more sophisticated AI models, especially in healthcare and analytics.</p>
-    </div>
-
-</div>
-
-<footer>
-    <p>&copy; 2024 Sricharan Mahavadi | All Rights Reserved</p>
-</footer>
-
-<script>
-    document.querySelectorAll(".collapsible").forEach(button => {
-        button.addEventListener("click", function() {
-            this.classList.toggle("active");
-            let content = this.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        });
-    });
-</script>
-
-</body>
-</html>
+export {
+  illustration,
+  greeting,
+  socialMediaLinks,
+  splashScreen,
+  skillsSection,
+  educationInfo,
+  techStack,
+  workExperiences,
+  bigProjects,
+  achievementSection,
+  contactInfo,
+};
